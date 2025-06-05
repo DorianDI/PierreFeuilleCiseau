@@ -1,0 +1,17 @@
+{
+  "name": "demobun",
+  "module": "src/index.ts",
+  "devDependencies": {
+    "@types/better-sqlite3": "^7.6.13",
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
+  },
+  "private": true,
+  "scripts": {
+    "start": "bun src/index.ts",
+    "dev": "bun --hot src/index.ts"
+  },
+  "type": "module"
+}
