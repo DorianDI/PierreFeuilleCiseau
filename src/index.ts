@@ -3,7 +3,7 @@ import type { Move, GameResult, Winner } from './types';
 import { FileGameRepository } from "../infrastructure/FileGameRepository.ts";
 const repo = new FileGameRepository();
 
-const moves: Move[]= ['rock', 'paper', 'scissors'];
+const moves: Move[]= ['rock', 'paper', 'zizi'];
 
 function getRandomMove(): Move {
     const move = moves[Math.floor(Math.random() * moves.length)];

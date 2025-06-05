@@ -50,7 +50,7 @@ const repo = new SqliteGameRepository();
 
 describe("SqliteGameRepository", () => {
     it("devrait sauvegarder et lire un game", async () => {
-        const game: GameResult = { player1: "rock", player2: "scissors", winner: "Player1" };
+        const game: GameResult = { player1: "rock", player2: "zizi", winner: "Player1" };
         await repo.saveGame(game);
         const games = await repo.getGames();
         expect(games).toContainEqual(game);
@@ -93,7 +93,7 @@ describe("SqliteGameRepository", () => {
     });
 
     it("devrait retourner les parties gagnées par Player1", async () => {
-        const game: GameResult = { player1: "rock", player2: "scissors", winner: "Player1" };
+        const game: GameResult = { player1: "rock", player2: "zizi", winner: "Player1" };
         await repo.saveGame(game);
 
         const games = await repo.getGamesByPlayer("Player1");

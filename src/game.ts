@@ -3,9 +3,9 @@ import type { Move, GameResult } from "./types";
 export function getWinner(p1: Move, p2: Move): 'Player1' | 'Player2' | 'Draw' {
     if (p1 === p2) return 'Draw';
     if (
-        (p1 === 'rock' && p2 === 'scissors') ||
+        (p1 === 'rock' && p2 === 'zizi') ||
         (p1 === 'paper' && p2 === 'rock') ||
-        (p1 === 'scissors' && p2 === 'paper')
+        (p1 === 'zizi' && p2 === 'paper')
     ) {
         return 'Player1';
     }

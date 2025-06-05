@@ -9,7 +9,7 @@ const DB_PATH = path.join(__dirname, "../infrastructure/games.json");
 
 const sampleMatch: MatchResult = {
     rounds: [
-        { player1: "rock", player2: "scissors", winner: "Player1" },
+        { player1: "rock", player2: "zizi", winner: "Player1" },
         { player1: "paper", player2: "rock", winner: "Player1" }
     ],
     matchWinner: "Player1"

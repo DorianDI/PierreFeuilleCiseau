@@ -1,4 +1,4 @@
-export type Move = 'rock' | 'paper' | 'scissors';
+export type Move = 'rock' | 'paper' | 'zizi';
 
 export type Winner = 'Player1' | 'Player2' | 'Draw';
 

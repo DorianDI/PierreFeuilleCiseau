@@ -1,1 +1,87 @@
-[]
+[
+  {
+    "rounds": [
+      {
+        "player1": "rock",
+        "player2": "zizi",
+        "winner": "Player1"
+      },
+      {
+        "player1": "paper",
+        "player2": "paper",
+        "winner": "Draw"
+      },
+      {
+        "player1": "rock",
+        "player2": "paper",
+        "winner": "Player2"
+      },
+      {
+        "player1": "rock",
+        "player2": "zizi",
+        "winner": "Player1"
+      }
+    ],
+    "matchWinner": "Player1"
+  },
+  {
+    "rounds": [
+      {
+        "player1": "paper",
+        "player2": "paper",
+        "winner": "Draw"
+      },
+      {
+        "player1": "zizi",
+        "player2": "zizi",
+        "winner": "Draw"
+      },
+      {
+        "player1": "rock",
+        "player2": "paper",
+        "winner": "Player2"
+      },
+      {
+        "player1": "zizi",
+        "player2": "rock",
+        "winner": "Player2"
+      }
+    ],
+    "matchWinner": "Player2"
+  },
+  {
+    "rounds": [
+      {
+        "player1": "paper",
+        "player2": "zizi",
+        "winner": "Player2"
+      },
+      {
+        "player1": "zizi",
+        "player2": "rock",
+        "winner": "Player2"
+      }
+    ],
+    "matchWinner": "Player2"
+  },
+  {
+    "rounds": [
+      {
+        "player1": "zizi",
+        "player2": "paper",
+        "winner": "Player1"
+      },
+      {
+        "player1": "paper",
+        "player2": "zizi",
+        "winner": "Player2"
+      },
+      {
+        "player1": "rock",
+        "player2": "zizi",
+        "winner": "Player1"
+      }
+    ],
+    "matchWinner": "Player1"
+  }
+]
