@@ -7,3 +7,8 @@ export interface GameResult {
     player2: Move;
     winner: Winner;
 }
+
+export interface MatchResult {
+    rounds: GameResult[];
+    matchWinner: Winner;
+}

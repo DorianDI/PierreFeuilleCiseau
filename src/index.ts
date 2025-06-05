@@ -1,7 +1,7 @@
 import { playGame } from './game.ts';
 import type { Move, GameResult, Winner } from './types';
-import { SqliteGameRepository  } from "../infrastructure/SqliteGameRepository.ts";
-const repo = new SqliteGameRepository();
+import { FileGameRepository } from "../infrastructure/FileGameRepository.ts";
+const repo = new FileGameRepository();
 
 const moves: Move[]= ['rock', 'paper', 'scissors'];
 
@@ -29,8 +29,6 @@ while (score['Player1'] < 2 && score['Player2'] < 2) {
     }
 
     rounds.push(result);
-
-    await repo.saveGame(result);
 }
 
 matchWinner = score["Player1"] === 2 ? "Player1" : "Player2";
@@ -39,5 +37,7 @@ const matchResult = {
     rounds,
     matchWinner,
 };
+
+await repo.saveMatch(matchResult);
 
 console.log(JSON.stringify(matchResult, null, 2));
