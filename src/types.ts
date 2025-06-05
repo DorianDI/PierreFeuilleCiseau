@@ -1,10 +1,10 @@
 export type Move = 'rock' | 'paper' | 'zizi';
 
-export type Winner = 'Player1' | 'Player2' | 'Draw';
+export type Winner = 'Lisa' | 'Dorian' | 'Draw';
 
 export interface GameResult {
-    player1: Move;
-    player2: Move;
+    Lisa: Move;
+    Dorian: Move;
     winner: Winner;
 }
 

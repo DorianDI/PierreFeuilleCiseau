@@ -10,8 +10,8 @@ beforeEach(() => {
     db.exec(`
         CREATE TABLE games (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
-            player1 TEXT NOT NULL,
-            player2 TEXT NOT NULL,
+            Lisa TEXT NOT NULL,
+            Dorian TEXT NOT NULL,
             winner TEXT NOT NULL
         )
     `);
@@ -40,7 +40,7 @@ class ExplodingSqliteRepo extends SqliteGameRepository {
         throw new GameRepositoryError("Erreur écriture SQLite");
     }
 
-    override async getGamesByPlayer(_: "Player1" | "Player2"): Promise<GameResult[]> {
+    override async getGamesByPlayer(_: "Lisa" | "Dorian"): Promise<GameResult[]> {
         throw new GameRepositoryError("Erreur lecture SQLite");
     }
 }
@@ -50,7 +50,7 @@ const repo = new SqliteGameRepository();
 
 describe("SqliteGameRepository", () => {
     it("devrait sauvegarder et lire un game", async () => {
-        const game: GameResult = { player1: "rock", player2: "zizi", winner: "Player1" };
+        const game: GameResult = { Lisa: "rock", Dorian: "zizi", winner: "Lisa" };
         await repo.saveGame(game);
         const games = await repo.getGames();
         expect(games).toContainEqual(game);
@@ -63,22 +63,22 @@ describe("SqliteGameRepository", () => {
 
     it("devrait lever une erreur si la sauvegarde échoue", async () => {
         const repo = new ExplodingSqliteRepo();
-        await expect(repo.saveGame({ player1: "rock", player2: "paper", winner: "Player2" }))
+        await expect(repo.saveGame({ Lisa: "rock", Dorian: "paper", winner: "Dorian" }))
             .rejects.toThrow(GameRepositoryError);
     });
 
     it("devrait lever une erreur si la lecture échoue", async () => {
         const repo = new ExplodingSqliteRepo();
-        await expect(repo.getGamesByPlayer("Player1"))
+        await expect(repo.getGamesByPlayer("Lisa"))
             .rejects.toThrow(GameRepositoryError);
     });
 
     it("devrait gérer une erreur dans saveGame", async () => {
         const repo = new BrokenTableRepo();
         await expect(repo.saveGame({
-            player1: "rock",
-            player2: "paper",
-            winner: "Player1"
+            Lisa: "rock",
+            Dorian: "paper",
+            winner: "Lisa"
         })).rejects.toThrow(GameRepositoryError);
     });
 
@@ -89,14 +89,14 @@ describe("SqliteGameRepository", () => {
 
     it("devrait gérer une erreur dans getGamesByPlayer", async () => {
         const repo = new BrokenTableRepo();
-        await expect(repo.getGamesByPlayer("Player1")).rejects.toThrow(GameRepositoryError);
+        await expect(repo.getGamesByPlayer("Lisa")).rejects.toThrow(GameRepositoryError);
     });
 
-    it("devrait retourner les parties gagnées par Player1", async () => {
-        const game: GameResult = { player1: "rock", player2: "zizi", winner: "Player1" };
+    it("devrait retourner les parties gagnées par Lisa", async () => {
+        const game: GameResult = { Lisa: "rock", Dorian: "zizi", winner: "Lisa" };
         await repo.saveGame(game);
 
-        const games = await repo.getGamesByPlayer("Player1");
+        const games = await repo.getGamesByPlayer("Lisa");
 
         expect(games).toEqual([game]); // ou expect length === 1
     });

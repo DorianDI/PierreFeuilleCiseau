@@ -13,13 +13,13 @@ function getRandomMove(): Move {
 
 const rounds: GameResult[] = [];
 let score = {
-    'Player1': 0,
-    'Player2': 0,
+    'Lisa': 0,
+    'Dorian': 0,
 };
 
 let matchWinner: Winner = 'Draw';
 
-while (score['Player1'] < 2 && score['Player2'] < 2) {
+while (score['Lisa'] < 2 && score['Dorian'] < 2) {
     const p1 = getRandomMove();
     const p2 = getRandomMove();
     const result = playGame(p1, p2);
@@ -31,7 +31,7 @@ while (score['Player1'] < 2 && score['Player2'] < 2) {
     rounds.push(result);
 }
 
-matchWinner = score["Player1"] === 2 ? "Player1" : "Player2";
+matchWinner = score["Lisa"] === 2 ? "Lisa" : "Dorian";
 
 const matchResult = {
     rounds,

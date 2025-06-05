@@ -8,8 +8,8 @@ const db = new Database("games.db", { create: true });
 db.run(`
     CREATE TABLE IF NOT EXISTS games (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
-        player1 TEXT NOT NULL,
-        player2 TEXT NOT NULL,
+        Lisa TEXT NOT NULL,
+        Dorian TEXT NOT NULL,
         winner TEXT NOT NULL
     )
 `);
@@ -17,9 +17,9 @@ db.run(`
 export class SqliteGameRepository implements GameRepository {
     async saveGame(result: GameResult): Promise<void> {
         try {
-            db.run("INSERT INTO games (player1, player2, winner) VALUES (?, ?, ?)", [
-                result.player1,
-                result.player2,
+            db.run("INSERT INTO games (Lisa, Dorian, winner) VALUES (?, ?, ?)", [
+                result.Lisa,
+                result.Dorian,
                 result.winner
             ]);
         } catch (err) {
@@ -29,10 +29,10 @@ export class SqliteGameRepository implements GameRepository {
 
     async getGames(): Promise<GameResult[]> {
         try {
-            const rows = db.query("SELECT player1, player2, winner FROM games").all() as any[];
+            const rows = db.query("SELECT Lisa, Dorian, winner FROM games").all() as any[];
             return rows.map(r => ({
-                player1: r.player1 as GameResult["player1"],
-                player2: r.player2 as GameResult["player2"],
+                Lisa: r.Lisa as GameResult["Lisa"],
+                Dorian: r.Dorian as GameResult["Dorian"],
                 winner: r.winner as GameResult["winner"]
             }));
         } catch (err) {
@@ -40,15 +40,15 @@ export class SqliteGameRepository implements GameRepository {
         }
     }
 
-    async getGamesByPlayer(player: "Player1" | "Player2"): Promise<GameResult[]> {
+    async getGamesByPlayer(player: "Lisa" | "Dorian"): Promise<GameResult[]> {
         try {
             const rows = db
-                .query("SELECT player1, player2, winner FROM games WHERE winner = ?")
+                .query("SELECT Lisa, Dorian, winner FROM games WHERE winner = ?")
                 .all(player) as any[];
 
             return rows.map(r => ({
-                player1: r.player1 as GameResult["player1"],
-                player2: r.player2 as GameResult["player2"],
+                Lisa: r.Lisa as GameResult["Lisa"],
+                Dorian: r.Dorian as GameResult["Dorian"],
                 winner: r.winner as GameResult["winner"]
             }));
         } catch (err) {

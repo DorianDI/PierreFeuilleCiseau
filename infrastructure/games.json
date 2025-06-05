@@ -2,86 +2,101 @@
   {
     "rounds": [
       {
-        "player1": "rock",
-        "player2": "zizi",
-        "winner": "Player1"
+        "Lisa": "rock",
+        "Dorian": "zizi",
+        "winner": "Lisa"
       },
       {
-        "player1": "paper",
-        "player2": "paper",
+        "Lisa": "paper",
+        "Dorian": "paper",
         "winner": "Draw"
       },
       {
-        "player1": "rock",
-        "player2": "paper",
-        "winner": "Player2"
+        "Lisa": "rock",
+        "Dorian": "paper",
+        "winner": "Dorian"
       },
       {
-        "player1": "rock",
-        "player2": "zizi",
-        "winner": "Player1"
+        "Lisa": "rock",
+        "Dorian": "zizi",
+        "winner": "Lisa"
       }
     ],
-    "matchWinner": "Player1"
+    "matchWinner": "Lisa"
   },
   {
     "rounds": [
       {
-        "player1": "paper",
-        "player2": "paper",
+        "Lisa": "paper",
+        "Dorian": "paper",
         "winner": "Draw"
       },
       {
-        "player1": "zizi",
-        "player2": "zizi",
+        "Lisa": "zizi",
+        "Dorian": "zizi",
         "winner": "Draw"
       },
       {
-        "player1": "rock",
-        "player2": "paper",
-        "winner": "Player2"
+        "Lisa": "rock",
+        "Dorian": "paper",
+        "winner": "Dorian"
       },
       {
-        "player1": "zizi",
-        "player2": "rock",
-        "winner": "Player2"
+        "Lisa": "zizi",
+        "Dorian": "rock",
+        "winner": "Dorian"
       }
     ],
-    "matchWinner": "Player2"
+    "matchWinner": "Dorian"
   },
   {
     "rounds": [
       {
-        "player1": "paper",
-        "player2": "zizi",
-        "winner": "Player2"
+        "Lisa": "paper",
+        "Dorian": "zizi",
+        "winner": "Dorian"
       },
       {
-        "player1": "zizi",
-        "player2": "rock",
-        "winner": "Player2"
+        "Lisa": "zizi",
+        "Dorian": "rock",
+        "winner": "Dorian"
       }
     ],
-    "matchWinner": "Player2"
+    "matchWinner": "Dorian"
   },
   {
     "rounds": [
       {
-        "player1": "zizi",
-        "player2": "paper",
-        "winner": "Player1"
+        "Lisa": "zizi",
+        "Dorian": "paper",
+        "winner": "Lisa"
       },
       {
-        "player1": "paper",
-        "player2": "zizi",
-        "winner": "Player2"
+        "Lisa": "paper",
+        "Dorian": "zizi",
+        "winner": "Dorian"
       },
       {
-        "player1": "rock",
-        "player2": "zizi",
-        "winner": "Player1"
+        "Lisa": "rock",
+        "Dorian": "zizi",
+        "winner": "Lisa"
       }
     ],
-    "matchWinner": "Player1"
+    "matchWinner": "Lisa"
+  },
+  {
+    "rounds": [
+      {
+        "Lisa": "paper",
+        "Dorian": "zizi",
+        "winner": "Dorian"
+      },
+      {
+        "Lisa": "rock",
+        "Dorian": "paper",
+        "winner": "Dorian"
+      }
+    ],
+    "matchWinner": "Dorian"
   }
 ]
